@@ -1,0 +1,16 @@
+# External Python libraries (install via pip)
+azure-ai-formrecognizer
+msrest-authentication
+azure-core-credentials
+azure-cognitiveservices-vision-face
+azure-cognitiveservices-vision-computervision
+azure-cognitiveservices-vision-computervision-prediction
+azure-cognitiveservices-vision-computervision-prediction-models
+azure-storage-blob
+
+# Standard Library modules (no installation needed)
+json
+pprint
+requests
+os
+datetime
