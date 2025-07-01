@@ -1,16 +1,28 @@
-# External Python libraries (install via pip)
-azure-ai-formrecognizer
-msrest-authentication
-azure-core-credentials
-azure-cognitiveservices-vision-face
-azure-cognitiveservices-vision-computervision
-azure-cognitiveservices-vision-computervision-prediction
-azure-cognitiveservices-vision-computervision-prediction-models
-azure-storage-blob
+# ── External Python libraries (install via pip) ────────────────────────────────
+# NOTE: Each line ends with a short comment describing the library.
 
-# Standard Library modules (no installation needed)
-json
-pprint
-requests
-os
-datetime
+from azure.ai.formrecognizer import DocumentAnalysisClient          # Extract structured data from documents with Azure Form Recognizer
+from azure.core.credentials import AzureKeyCredential               # Credential helper used to authenticate Azure SDK clients
+from azure.storage.blob import (BlobServiceClient,                  # Manage Azure Blob Storage containers and blobs
+                                BlobSasPermissions,
+                                generate_blob_sas)
+from azure.cognitiveservices.vision.face import FaceClient          # Call the Azure Face API for detection & identification
+from azure.cognitiveservices.vision.face.models import RecognitionModel  # Model enums and types for the Face API
+from azure.cognitiveservices.vision.customvision.prediction import (     # Run inference with Azure Custom Vision models
+    CustomVisionPredictionClient)
+from msrest.authentication import (ApiKeyCredentials,               # Generic API-key credentials for Azure Cognitive Services
+                                   CognitiveServicesCredentials)
+import pandas as pd                                                 # Powerful data manipulation & analysis toolbox
+from PIL import Image                                               # Pillow: open, process and save many image formats
+import requests                                                     # Lightweight HTTP client for making REST calls
+
+# ── Standard-library modules (no installation needed) ─────────────────────────
+from datetime import datetime, timedelta, time, date                # Core date-and-time types and utilities
+from urllib.parse import quote                                      # URL quoting / encoding helpers
+from time import sleep                                              # Simple cross-platform sleep/delay function
+import unicodedata                                                  # Look up Unicode character properties
+import re                                                           # Regular-expression operations
+import io                                                           # Streams, in-memory buffers (BytesIO, StringIO, …)
+import json                                                         # Encode and decode JSON data
+import os                                                           # Portable operating-system interfaces
+import pprint                                                       # “Pretty print” for complex data structures
